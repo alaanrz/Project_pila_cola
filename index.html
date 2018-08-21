@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Listado de Asignaciones</h1>
+<ul id="lista"></ul>
+<script>
+let maquinas=[];
+let operarios=[];
+//cola
+operarios.push("juan");
+operarios.push("diego");
+operarios.push("adrian");
+//pila
+maquinas.push("s100");
+maquinas.push("s200");
+maquinas.push("s300");
+
+function esVacia(arreglo){
+	return (arreglo.length==0);
+}
+function asignar(arregloMaquinas,arregloOperarios){
+	let unaMaquina;
+	let unOperario;
+	while(!esVacia(arregloMaquinas) && !esVacia(arregloOperarios)){
+		unaMaquina=arregloMaquinas.pop();
+		unOperario=arregloOperarios.shift();
+		document.querySelector("#lista").innerHTML +="<li>"+unaMaquina+" "+unOperario+"</li>";
+	}
+}
+
+asignar(maquinas,operarios);
+</script>
+</body>
+</html>
